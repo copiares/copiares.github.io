@@ -629,3 +629,14 @@ function encodeDecodeURL() {
         }
       }
     //]] 
+
+ // Verifica se os cookies já foram aceitos
+    if (localStorage.getItem('cookiesAccepted')) {
+        document.getElementById('cookie-container').style.display = 'none';
+    }
+
+    // Adiciona um evento de clique ao botão de aceitar cookies
+    document.getElementById('accept-cookies-button').addEventListener('click', function() {
+        localStorage.setItem('cookiesAccepted', true);
+        document.getElementById('cookie-container').style.display = 'none';
+    });
