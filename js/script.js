@@ -573,7 +573,7 @@ function encodeDecodeURL() {
  var linkPolitica = document.getElementById("linkPolitica");
  var linkTermos = document.getElementById("linkSobre");
  var linkDisclaimer = document.getElementById("linkDisclaimer");
- var linkTransparencia = document.getElementById("linkTransparencia");
+ var linkTransparency = document.getElementById("linkTransparency");
  
  // Pega as popups
  var popupContato = document.getElementById("popupContato");
@@ -598,7 +598,7 @@ function encodeDecodeURL() {
  linkDisclaimer.onclick = function() {
      popupDisclaimer.style.display = "block";
  }
- linkTransparencia.onclick = function() {
+ linkTransparency.onclick = function() {
      popupTransparencia.style.display = "block";
  }
  
