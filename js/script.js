@@ -573,12 +573,14 @@ function encodeDecodeURL() {
  var linkPolitica = document.getElementById("linkPolitica");
  var linkTermos = document.getElementById("linkSobre");
  var linkDisclaimer = document.getElementById("linkDisclaimer");
+ var linkTransparencia = document.getElementById("linkTransparencia");
  
  // Pega as popups
  var popupContato = document.getElementById("popupContato");
  var popupPolitica = document.getElementById("popupPolitica");
  var popupTermos = document.getElementById("popupSobre");
  var popupDisclaimer = document.getElementById("popupDisclaimer");
+ var popupTransparencia = document.getElementById("popupTransparencia");
  
  // Pega os elementos <span> que fecham as popups
  var spans = document.getElementsByClassName("close");
@@ -596,6 +598,9 @@ function encodeDecodeURL() {
  linkDisclaimer.onclick = function() {
      popupDisclaimer.style.display = "block";
  }
+ linkTransparencia.onclick = function() {
+     popupTransparencia.style.display = "block";
+ }
  
  // Quando o usuário clica em <span> (x), fecha a popup
  for (let i = 0; i < spans.length; i++) {
@@ -604,6 +609,7 @@ function encodeDecodeURL() {
          popupPolitica.style.display = "none";
          popupSobre.style.display = "none";
          popupDisclaimer.style.display = "none";
+         popupTransparencia.style.display = "none";
      }
  }
  
@@ -617,6 +623,8 @@ function encodeDecodeURL() {
          popupTermos.style.display = "none";
      } else if (event.target == popupDisclaimer) {
          popupDisclaimer.style.display = "none";
+     } else if (event.target == popupTransparencia) {
+         popupTransparencia.style.display = "none";
      }
  }
 
