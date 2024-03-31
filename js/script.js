@@ -638,13 +638,36 @@ function encodeDecodeURL() {
       }
     //]] 
 
- // Verifica se os cookies já foram aceitos
-    if (localStorage.getItem('cookiesAccepted')) {
-        document.getElementById('cookie-container').style.display = 'none';
+// Função para definir um cookie
+function setCookie(name, value, days) {
+    var expires = "";
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        expires = "; expires=" + date.toUTCString();
     }
+    document.cookie = name + "=" + (value || "") + expires + "; path=/";
+}
 
-    // Adiciona um evento de clique ao botão de aceitar cookies
-    document.getElementById('accept-cookies-button').addEventListener('click', function() {
-        localStorage.setItem('cookiesAccepted', true);
-        document.getElementById('cookie-container').style.display = 'none';
-    });
+// Função para obter um cookie
+function getCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for (var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+    }
+    return null;
+}
+
+// Verifica se os cookies já foram aceitos
+if (getCookie('cookiesAccepted')) {
+    document.getElementById('cookie-container').style.display = 'none';
+}
+
+// Adiciona um evento de clique ao botão de aceitar cookies
+document.getElementById('accept-cookies-button').addEventListener('click', function() {
+    setCookie('cookiesAccepted', true, 7); // Define o cookie por 7 dias
+    document.getElementById('cookie-container').style.display = 'none';
+});
