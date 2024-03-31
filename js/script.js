@@ -563,63 +563,7 @@ function encodeDecodeURL() {
         const match = url.match(regExp);
         return match && match[1];
     }
-  
-
-
- // Script para manipular popups
-    // Pega os links que abrem as popups
-    var linksPopup = document.querySelectorAll('.popup-link');
-
-    // Pega os elementos de popup correspondentes
-    var popups = document.querySelectorAll('.popup');
-
-    // Pega os elementos <span> que fecham as popups
-    var spans = document.querySelectorAll('.close');
-
-    // Função para abrir o popup correspondente ao link clicado
-    function openPopup(index) {
-        popups[index].style.display = "block";
-    }
-
-    // Função para fechar todos os popups
-    function closeAllPopups() {
-        popups.forEach(function(popup) {
-            popup.style.display = "none";
-        });
-    }
-
-    // Adiciona eventos de clique aos links
-    linksPopup.forEach(function(link, index) {
-        link.onclick = function() {
-            closeAllPopups(); // Fecha todos os popups antes de abrir o selecionado
-            openPopup(index); // Abre o popup correspondente ao link clicado
-        };
-    });
-
-    // Adiciona eventos de clique aos spans de fechar
-    spans.forEach(function(span) {
-        span.onclick = function() {
-            closeAllPopups(); // Fecha todos os popups quando o span de fechar é clicado
-        };
-    });
-
-    // Fecha o popup quando o usuário clica em qualquer lugar fora dele
-    window.onclick = function(event) {
-        if (event.target.classList.contains('popup')) {
-            closeAllPopups(); // Fecha todos os popups se o usuário clicar fora de um popup
-        }
-    };
-
-
-
-// scritp adsense 
- //<![CDATA[
-    for (var ads = document.querySelectorAll('ins.adsbygoogle'), i=0; i<ads.length; i++){
-        if (ads[i]) {
-          (adsbygoogle = window.adsbygoogle || []).push({});
-        }
-      }
-    //]] 
+   
 
 // Função para definir um cookie
 function setCookie(name, value, days) {
