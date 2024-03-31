@@ -566,67 +566,50 @@ function encodeDecodeURL() {
   
 
 
+ // Script para manipular popups
+    // Pega os links que abrem as popups
+    var linksPopup = document.querySelectorAll('.popup-link');
 
-// script popups pages
- // Pega os links que abrem as popups
- var linkContato = document.getElementById("linkContato");
- var linkPolitica = document.getElementById("linkPolitica");
- var linkTermos = document.getElementById("linkSobre");
- var linkDisclaimer = document.getElementById("linkDisclaimer");
- var linkTransparency = document.getElementById("linkTransparency");
- 
- // Pega as popups
- var popupContato = document.getElementById("popupContato");
- var popupPolitica = document.getElementById("popupPolitica");
- var popupTermos = document.getElementById("popupSobre");
- var popupDisclaimer = document.getElementById("popupDisclaimer");
- var popupTransparency = document.getElementById("popupTransparency");
- 
- // Pega os elementos <span> que fecham as popups
- var spans = document.getElementsByClassName("close");
- 
- // Quando o usuário clica nos links, abre as popups correspondentes
- linkContato.onclick = function() {
-     popupContato.style.display = "block";
- }
- linkPolitica.onclick = function() {
-     popupPolitica.style.display = "block";
- }
- linkTermos.onclick = function() {
-     popupTermos.style.display = "block";
- }
- linkDisclaimer.onclick = function() {
-     popupDisclaimer.style.display = "block";
- }
- linkTransparency.onclick = function() {
-     popupTransparency.style.display = "block";
- }
- 
- // Quando o usuário clica em <span> (x), fecha a popup
- for (let i = 0; i < spans.length; i++) {
-     spans[i].onclick = function() {
-         popupContato.style.display = "none";
-         popupPolitica.style.display = "none";
-         popupSobre.style.display = "none";
-         popupDisclaimer.style.display = "none";
-         popupTransparency.style.display = "none";
-     }
- }
- 
- // Quando o usuário clica em qualquer lugar fora da popup, fecha ela
- window.onclick = function(event) {
-     if (event.target == popupContato) {
-         popupContato.style.display = "none";
-     } else if (event.target == popupPolitica) {
-         popupPolitica.style.display = "none";
-     } else if (event.target == popupSobre) {
-         popupTermos.style.display = "none";
-     } else if (event.target == popupDisclaimer) {
-         popupDisclaimer.style.display = "none";
-     } else if (event.target == popupTransparency) {
-         popupTransparency.style.display = "none";
-     }
- }
+    // Pega os elementos de popup correspondentes
+    var popups = document.querySelectorAll('.popup');
+
+    // Pega os elementos <span> que fecham as popups
+    var spans = document.querySelectorAll('.close');
+
+    // Função para abrir o popup correspondente ao link clicado
+    function openPopup(index) {
+        popups[index].style.display = "block";
+    }
+
+    // Função para fechar todos os popups
+    function closeAllPopups() {
+        popups.forEach(function(popup) {
+            popup.style.display = "none";
+        });
+    }
+
+    // Adiciona eventos de clique aos links
+    linksPopup.forEach(function(link, index) {
+        link.onclick = function() {
+            closeAllPopups(); // Fecha todos os popups antes de abrir o selecionado
+            openPopup(index); // Abre o popup correspondente ao link clicado
+        };
+    });
+
+    // Adiciona eventos de clique aos spans de fechar
+    spans.forEach(function(span) {
+        span.onclick = function() {
+            closeAllPopups(); // Fecha todos os popups quando o span de fechar é clicado
+        };
+    });
+
+    // Fecha o popup quando o usuário clica em qualquer lugar fora dele
+    window.onclick = function(event) {
+        if (event.target.classList.contains('popup')) {
+            closeAllPopups(); // Fecha todos os popups se o usuário clicar fora de um popup
+        }
+    };
+
 
 
 // scritp adsense 
