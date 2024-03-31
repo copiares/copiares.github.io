@@ -4,7 +4,7 @@
 // script funcoes 
 
 // Gerador QRCode
-async function genQR() {
+ async function genQR() {
     var gapi = "https://chart.googleapis.com/chart?chf=bg,s,65432100&cht=qr&chs=";
     var myimg = document.getElementById("img");
     var mytext = document.getElementById("qrtext").value;
@@ -12,7 +12,8 @@ async function genQR() {
 
     if (mytext !== "") {
         if (mysize >= 100 && mysize <= 300 && mysize % 50 === 0) {
-            myimg.src = gapi + mysize + "x" + mysize + "&chl=" + mytext;
+            var imageUrl = gapi + mysize + "x" + mysize + "&chl=" + encodeURIComponent(mytext);
+            myimg.src = imageUrl;
         } else {
             alert("Invalid size. Size should be a multiple of 50 between 100 and 300.");
         }
@@ -20,6 +21,7 @@ async function genQR() {
         alert("Please Enter Text");
     }
 }
+
 
 
    
