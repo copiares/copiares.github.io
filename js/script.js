@@ -24,6 +24,7 @@
 
 
 
+
    
     //Gerador de Curriculo em PDF
     function generateResumePDF() {
