@@ -22,37 +22,7 @@ Allow: /
 User-agent: AdsBot-Google-Mobile
 Allow: /
 
-User-agent: Googlebot-Image
-Allow: /
-
 User-agent: Googlebot-News
-Allow: /
-
-User-agent: Googlebot-Video
-Allow: /
-
-User-agent: Google-AdSense
-Allow: /
-
-User-agent: Googlebot
-Allow: /
-
-User-agent: Googlebot-News
-Allow: /
-
-User-agent: Googlebot-Video
-Allow: /
-
-User-agent: Googlebot-Image
-Allow: /
-
-User-agent: Googlebot-Mobile
-Allow: /
-
-User-agent: Googlebot-Image
-Allow: /
-
-User-agent: Googlebot-Video
 Allow: /
 
 User-agent: Google-AdSense
