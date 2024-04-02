@@ -117,13 +117,105 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
       <section class="tool-section">
     <h2>Gerador de QR Code</h2>
-    <form>
-    <label for="input">Digite seu texto:</label>
-    <input type="text" id="input" placeholder="Digite o texto aqui">
-    <button type="button" onclick="gerarQRCode()">Gerar QR Code</button>
-    <button id="download-btn" onclick="baixarQRCode()">Baixar QR Code</button>
-  </form>
-  <div id="qrcode"></div>
+   
+    <style>
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      h1 {
+        margin-top: 50px;
+        font-size: 40px;
+      }
+
+      form {
+        margin-top: 30px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 10px;
+        font-size: 20px;
+      }
+
+      input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-bottom: 20px;
+      }
+
+      #qrcode {
+        margin-top: 50px;
+      }
+    </style>
+  
+    <div class="container">
+      <h1>Gerador de QR Code</h1>
+      <form>
+        <label for="input">Digite seu texto:</label>
+        <input type="text" id="input" placeholder="Digite o texto aqui">
+        <button type="button" onclick="gerarQRCode()">Gerar QR Code</button>
+        <button id="download-btn" onclick="baixarQRCode()">Baixar QR Code</button>
+      </form>
+      <div id="qrcode"></div>
+    </div>
+
+    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+    <script>
+      function gerarQRCode() {
+        var containerQRCode = document.getElementById("qrcode");
+        var texto = document.getElementById("input").value;
+
+        if (texto === "") {
+          alert("Por favor, digite algum texto!");
+          return;
+        }
+
+        containerQRCode.innerHTML = "";
+        var qrcode = new QRCode(containerQRCode, {
+          text: texto,
+          width: 300,
+          height: 300,
+          colorDark: "#000000",
+          colorLight: "#FFFFFF",
+          correctLevel: QRCode.CorrectLevel.H
+        });
+      }
+
+      function baixarQRCode() {
+        var canvas = document.querySelector("#qrcode canvas");
+
+        if (!canvas) {
+          alert("Por favor, primeiro gere o QR Code!");
+          return;
+        }
+
+        var dataURL = canvas.toDataURL("image/png");
+        var link = document.createElement("a");
+        link.download = "qrcode.png";
+        link.href = dataURL;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      }
+    </script> 
+
 </section>
 
 
