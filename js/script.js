@@ -579,9 +579,11 @@ function getCookie(name) {
 }
 
 // Verifica se os cookies já foram aceitos
-if (!getCookie('cookiesAccepted')) {
-    document.getElementById('cookie-container').style.display = 'block';
-}
+window.addEventListener('load', function() {
+    if (!getCookie('cookiesAccepted')) {
+        document.getElementById('cookie-container').style.display = 'block';
+    }
+});
 
 // Adiciona um evento de clique ao botão de aceitar cookies
 document.getElementById('accept-cookies-button').addEventListener('click', function() {
