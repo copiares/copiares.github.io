@@ -4,42 +4,54 @@
 // script funcoes 
 
 // Gerador QRCode
-   function gerarQRCode() {
-        var containerQRCode = document.getElementById("qrcode");
-        var texto = document.getElementById("input").value;
+ async function carregarQRCodeScript() {
+    return new Promise((resolve, reject) => {
+      const script = document.createElement('script');
+      script.src = "https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js";
+      script.onload = resolve;
+      script.onerror = reject;
+      document.head.appendChild(script);
+    });
+  }
 
-        if (texto === "") {
-          alert("Por favor, digite algum texto!");
-          return;
-        }
+  async function gerarQRCode() {
+    await carregarQRCodeScript();
+    var containerQRCode = document.getElementById("qrcode");
+    var texto = document.getElementById("input").value;
 
-        containerQRCode.innerHTML = "";
-        var qrcode = new QRCode(containerQRCode, {
-          text: texto,
-          width: 300,
-          height: 300,
-          colorDark: "#000000",
-          colorLight: "#FFFFFF",
-          correctLevel: QRCode.CorrectLevel.H
-        });
-      }
+    if (texto === "") {
+      alert("Por favor, digite algum texto!");
+      return;
+    }
 
-      function baixarQRCode() {
-        var canvas = document.querySelector("#qrcode canvas");
+    containerQRCode.innerHTML = "";
+    var qrcode = new QRCode(containerQRCode, {
+      text: texto,
+      width: 300,
+      height: 300,
+      colorDark: "#000000",
+      colorLight: "#FFFFFF",
+      correctLevel: QRCode.CorrectLevel.H
+    });
+  }
 
-        if (!canvas) {
-          alert("Por favor, primeiro gere o QR Code!");
-          return;
-        }
+  function baixarQRCode() {
+    var canvas = document.querySelector("#qrcode canvas");
 
-        var dataURL = canvas.toDataURL("image/png");
-        var link = document.createElement("a");
-        link.download = "qrcode.png";
-        link.href = dataURL;
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-      }
+    if (!canvas) {
+      alert("Por favor, primeiro gere o QR Code!");
+      return;
+    }
+
+    var dataURL = canvas.toDataURL("image/png");
+    var link = document.createElement("a");
+    link.download = "qrcode.png";
+    link.href = dataURL;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
+
 
     //Gerador de Curriculo em PDF
     function generateResumePDF() {
