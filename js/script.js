@@ -4,28 +4,43 @@
 // script funcoes 
 
 // Gerador QRCode
- async function genQR() {
-    var gapi = "https://chart.googleapis.com/chart?chf=bg,s,65432100&cht=qr&chs=";
-    var myimg = document.getElementById("img");
-    var mytext = document.getElementById("qrtext").value;
-    var mysize = document.getElementById("size").value;
+   function gerarQRCode() {
+        var containerQRCode = document.getElementById("qrcode");
+        var texto = document.getElementById("input").value;
 
-    if (mytext !== "") {
-        if (mysize >= 100 && mysize <= 300 && mysize % 50 === 0) {
-            var imageUrl = gapi + mysize + "x" + mysize + "&chl=" + encodeURIComponent(mytext);
-            myimg.src = imageUrl;
-        } else {
-            alert("Invalid size. Size should be a multiple of 50 between 100 and 300.");
+        if (texto === "") {
+          alert("Por favor, digite algum texto!");
+          return;
         }
-    } else {
-        alert("Please Enter Text");
-    }
-}
 
+        containerQRCode.innerHTML = "";
+        var qrcode = new QRCode(containerQRCode, {
+          text: texto,
+          width: 300,
+          height: 300,
+          colorDark: "#000000",
+          colorLight: "#FFFFFF",
+          correctLevel: QRCode.CorrectLevel.H
+        });
+      }
 
+      function baixarQRCode() {
+        var canvas = document.querySelector("#qrcode canvas");
 
+        if (!canvas) {
+          alert("Por favor, primeiro gere o QR Code!");
+          return;
+        }
 
-   
+        var dataURL = canvas.toDataURL("image/png");
+        var link = document.createElement("a");
+        link.download = "qrcode.png";
+        link.href = dataURL;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      }
+
     //Gerador de Curriculo em PDF
     function generateResumePDF() {
         var doc = new jsPDF();
