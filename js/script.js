@@ -555,6 +555,18 @@ function setCookie(name, value, days) {
 }
 
 // Função para obter um cookie
+ // Função para definir um cookie
+function setCookie(name, value, days) {
+    var expires = "";
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        expires = "; expires=" + date.toUTCString();
+    }
+    document.cookie = name + "=" + (value || "") + expires + "; path=/";
+}
+
+// Função para obter um cookie
 function getCookie(name) {
     var nameEQ = name + "=";
     var ca = document.cookie.split(';');
@@ -567,8 +579,8 @@ function getCookie(name) {
 }
 
 // Verifica se os cookies já foram aceitos
-if (getCookie('cookiesAccepted')) {
-    document.getElementById('cookie-container').style.display = 'none';
+if (!getCookie('cookiesAccepted')) {
+    document.getElementById('cookie-container').style.display = 'block';
 }
 
 // Adiciona um evento de clique ao botão de aceitar cookies
