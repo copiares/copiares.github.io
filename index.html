@@ -20,7 +20,22 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
  rel="stylesheet">
+    
+  <style>
+.div-menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 
+.nav-link {
+  color: #000;
+  margin: 3px; /* Adicione margem entre os links para espaçamento */
+  text-align: center;
+  flex: 1 1 200px; /* Define uma largura mínima e máxima para cada item do menu */
+}
+     </style> 
+    
    <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -72,7 +87,30 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </div>
     </header>
 
-
+    <div class="div-menu">
+  <a class="nav-link" href="#gerarQRCode">Gerar QRCode</a> 
+  <a class="nav-link" href="#gerarCurriculo">Gerar Currículo</a> 
+  <a class="nav-link" href="#encurtarURL">Encurtar Link</a> 
+  <a class="nav-link" href="#gerarSenha">Gerar Senha</a> 
+  <a class="nav-link" href="#gerarLinkWhatsapp">Links para whatsapp</a> 
+  <a class="nav-link" href="#parseHTML">Parse HTML</a> 
+  <a class="nav-link" href="#tempoDeLeitura">Tempo de leitura</a> 
+  <a class="nav-link" href="#gerarPalavras">Gerar Palavras</a> 
+         <a class="nav-link" href="#textoParaBinario">Texto para binario </a> 
+  <a class="nav-link" href="#textoParaSlug">Texto para slug</a> 
+<a class="nav-link" href="#loremIpsum">Lorem Ipsum</a> 
+  <a class="nav-link" href="#codeDecodHTML">Code /Decode HTML</a> 
+  <a class="nav-link" href="#editorCores">Editor Cores</a> 
+  <a class="nav-link" href="#codeDecodeURL">Code / Decode URL</a> 
+  
+  <a class="nav-link" href="#contadorDeCaracteres">Contador de Caracteres</a> 
+  <a class="nav-link" href="#calculadora">Calculadora</a> 
+  <a class="nav-link" href="#geradorDeAssinatura">Gerar Assinatura</a> 
+  <a class="nav-link" href="#gerarData">Gerar Data</a> 
+  <a class="nav-link" href="#converterImagem">Converter Imagem</a> 
+  <a class="nav-link" href="#youtubeThumbnailDownload">Baixar Imagens do video</a> 
+  </div>
+    
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7021050384031529"
     crossorigin="anonymous"></script>
 <!-- ads -->
@@ -115,7 +153,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     <div class="container">
 
-      <section class="tool-section">
+      <section class="tool-section" id="gerarQRCode">
     <h2>Gerador de QR Code</h2>
    
  
@@ -175,7 +213,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
         <!-- Gerador de Currículo -->
-        <section class="tool-section">
+        <section class="tool-section"  id="gerarCurriculo">
             <div id="main-container">
                 <h1>Gerador de Currículo em PDF</h1>
                 <label for="name">Nome:</label>
@@ -219,7 +257,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </section>
 
         <!-- URL Shortener -->
-        <section class="tool-section">
+        <section class="tool-section" id="encurtarURL">
             <h1>Encurtar URL</h1>
             <div class="form-group">
                 <label for="originalUrl">Digite a URL para encurtar:</label>
@@ -233,7 +271,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </section>
 
         <!-- Gerador de Senha Segura -->
-        <section class="tool-section">
+        <section class="tool-section" id="gerarSenha">
             <h2>Gerador de Senha Segura</h2>
             <p class="description">Crie uma senha segura com comprimento personalizado.</p>
             <label for="passwordLength">Comprimento da senha:</label>
@@ -246,7 +284,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </section>
 
         <!-- Gerador de Link do WhatsApp -->
-        <section class="tool-section">
+        <section class="tool-section" id="gerarLinkWhatsapp">
             <h2>Gerador de Link do WhatsApp</h2>
             <p class="description">Crie um link direto para enviar mensagem pelo WhatsApp.</p>
             <label for="phoneNumber">Número de telefone:</label>
@@ -262,7 +300,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
         <!-- HTML to XML Converter -->
-        <section class="tool-section">
+        <section class="tool-section" id="parseHTML">
             <h2>Parse HTML to XML Blogger</h2>
             <p class="description">Converta codigo HTML para formato XML compatível com Blogger.</p>
             <textarea placeholder="Enter your HTML content here" style="width: 100%" id="htmlInput"></textarea>
@@ -275,7 +313,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
         <!-- Tempo de Leitura -->
-        <section class="tool-section">
+        <section class="tool-section" id="tempoDeLeitura">
             <h2>Calculadora de Tempo de Leitura</h2>
             <p class="description">Descubra quanto tempo levará para ler um texto fornecido. Perfeito para gerenciar seu
                 tempo de leitura de forma mais eficaz.</p>
@@ -291,7 +329,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
         <!-- Gerador de Palavras Aleatórias -->
-        <section class="tool-section">
+        <section class="tool-section" id="gerarPalavras">
             <h2>Gerador de Palavras Aleatórias</h2>
             <p class="description">Estimule a criatividade e sessões de brainstorming gerando palavras aleatórias.</p>
             <p>Gerar uma palavra aleatória a partir de uma lista predefinida</p>
@@ -303,7 +341,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </section>
 
         <!-- Texto para Binário/Binário para Texto -->
-        <section class="tool-section">
+        <section class="tool-section" id="textoParaBinario">
             <h2>Texto para Binário/Binário para Texto</h2>
             <p class="description">Converta texto para código binário e vice-versa, auxiliando em várias tarefas de
                 codificação e criptografia.</p>
@@ -318,7 +356,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
         <!-- Texto para Slug -->
-        <section class="tool-section">
+        <section class="tool-section" id="textoParaSlug">
             <h2>Texto para Slug</h2>
             <p class="description">Crie URLs amigáveis para SEO convertendo texto em slugs, tornando seus links mais
                 limpos e legíveis.</p>
@@ -331,7 +369,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </section>
 
         <!-- Gerador Lorem Ipsum -->
-        <section class="tool-section">
+        <section class="tool-section" id="loremIpsum">
             <h2>Gerador Lorem Ipsum</h2>
             <p class="description">Gere texto de espaçamento reservado para seus designs, ajudando você a visualizar
                 como o texto final ficará.</p>
@@ -348,7 +386,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </section>
 
         <!-- Codificador/Decodificador HTML -->
-        <section class="tool-section">
+        <section class="tool-section" id="codeDecodHTML">
             <h2>Codificador/Decodificador HTML</h2>
             <p class="description">Codifique com segurança seu HTML para evitar ataques XSS, ou decodifique o HTML para
                 ler o conteúdo facilmente.</p>
@@ -364,7 +402,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
         <!-- RGB para HEX e HEX para RGB -->
-        <section class="tool-section">
+        <section class="tool-section" id="editorCores">
             <h2>RGB para HEX e HEX para RGB</h2>
             <p class="description">Converta entre valores de cor RGB e HEX facilmente, simplificando seu processo de
                 design web.</p>
@@ -391,7 +429,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
         <!-- Codificador/Decodificador de URL -->
-        <section class="tool-section">
+        <section class="tool-section" id="codeDecodeURL">
             <h2>Codificador/Decodificador de URL</h2>
             <p class="description">Prepare URLs para transmissão pela internet, ou decodifique-os para ler o texto
                 original.</p>
@@ -406,7 +444,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
         <!-- Contador de Caracteres, Palavras e Linhas -->
-        <section class="tool-section">
+        <section class="tool-section" id="contadorDeCaracteres">
             <h2>Contador de Caracteres, Palavras e Linhas</h2>
             <p class="description">Conte o número de caracteres, palavras e linhas em um texto.</p>
             <textarea id="textArea" placeholder="Insira seu texto aqui para contar caracteres, palavras e linhas."
@@ -424,7 +462,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
         <!-- Calculadora -->
-        <section class="tool-section">
+        <section class="tool-section" id="calculadora">
             <h2>Calculadora</h2>
             <p class="description">Realize cálculos matemáticos básicos.</p>
             <input type="number" id="num1" placeholder="Digite o primeiro número">
@@ -443,7 +481,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </section>
 
         <!-- Gerador de Assinaturas -->
-        <section class="tool-section">
+        <section class="tool-section" id="geradorDeAssinatura">
             <h1>Gerador de Assinaturas de E-mail</h1>
             <p>Preencha os campos abaixo para criar sua assinatura de e-mail:</p>
 
@@ -462,7 +500,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </section>
 
         <!-- Gerador de Data -->
-        <section class="tool-section">
+        <section class="tool-section" id="gerarData">
             <h2>Gerador de Data Aleatória</h2>
             <p id="randomDate"></p>
             <button id="generateButton" onclick="updateRandomDate()">Gerar Data</button>
@@ -484,7 +522,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
         <!-- Conversor de IMAGENS -->
-        <section class="tool-section">
+        <section class="tool-section" id="converterImagem">
             <div id="converter-container">
                 <div class="converter-section">
                     <h3>PNG to JPG</h3>
@@ -500,7 +538,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </section>
 
         <!-- YouTube Thumbnail Downloader -->
-        <section class="tool-section">
+        <section class="tool-section" id="youtubeThumbnailDownload">
             <h1>YouTube Thumbnail Downloader</h1>
             <label for="videoUrl">Insira o URL do vídeo do YouTube:</label>
             <input type="text" id="videoUrl" placeholder="https://www.youtube.com/watch?v=...">
