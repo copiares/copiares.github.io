@@ -590,3 +590,27 @@ document.getElementById('accept-cookies-button').addEventListener('click', funct
     setCookie('cookiesAccepted', true, 7); // Define o cookie por 7 dias
     document.getElementById('cookie-container').style.display = 'none';
 });
+
+
+  window.addEventListener("load", function(){
+        const cookieConsent = window.cookieconsent;
+
+        const acceptAllButton = document.querySelector('.cc-btn.cc-allow-all');
+        const rejectButton = document.querySelector('.cc-btn.cc-deny');
+        const editPreferencesButton = document.querySelector('.cc-btn.cc-edit');
+        const privacyPolicyLink = document.querySelector('.cc-link.cc-policy-link');
+
+        acceptAllButton.addEventListener('click', function() {
+            cookieConsent.allowCookies();
+        });
+
+        rejectButton.addEventListener('click', function() {
+            cookieConsent.denyCookies();
+        });
+
+        editPreferencesButton.addEventListener('click', function() {
+            cookieConsent.openSettings();
+        });
+
+        privacyPolicyLink.href = window.cookieconsent_options.link;
+    });
