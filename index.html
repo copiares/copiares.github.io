@@ -53,13 +53,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
   gtag('config', 'G-CMTGP0W59P');
 </script>
-
-   <!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
-<script type='text/javascript'>
-    window.cookieconsent_options = {&quot;message&quot;:&quot;Este blog usa cookies do Google para personalizar anúncios e analisar o tráfego. Isso é feito para garantir que você tenha a melhor experiência possível ao acessa-lo.&quot;,&quot;dismiss&quot;:&quot;Eu aceito&quot;,&quot;learnMore&quot;:&quot;Veja a Política de privacidade&quot;,&quot;link&quot;:&quot;https://copiares.com/politica-de-privacidade.html&quot;,&quot;theme&quot;:&quot;dark-top&quot;};
-</script>
-<script src='//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.10/cookieconsent.min.js' type='text/javascript'/>
-<!-- End Cookie Consent plugin --> 
+ 
 </head>
     
 <body>
@@ -700,7 +694,50 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MBBNN89W"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-    
+
+     <!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
+<script type='text/javascript'>
+    window.cookieconsent_options = {
+        "message": "Este blog usa cookies do Google para personalizar anúncios e analisar o tráfego. Isso é feito para garantir que você tenha a melhor experiência possível ao acessá-lo.",
+        "dismiss": "Eu aceito",
+        "deny": "Rejeitar",
+        "allow": "Aceitar todos os cookies",
+        "link": "https://copiares.com/politica-de-privacidade.html",
+        "href": "https://copiares.com/politica-de-privacidade.html",
+        "target": "_blank",
+        "policy": "Política de Privacidade",
+        "theme": "dark-top"
+    };
+</script>
+<script src='//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.10/cookieconsent.min.js' type='text/javascript'></script>
+<!-- End Cookie Consent plugin -->
+
+<script type="text/javascript">
+    window.addEventListener("load", function(){
+        const cookieConsent = window.cookieconsent;
+
+        const acceptAllButton = document.querySelector('.cc-btn.cc-allow-all');
+        const rejectButton = document.querySelector('.cc-btn.cc-deny');
+        const editPreferencesButton = document.querySelector('.cc-btn.cc-edit');
+        const privacyPolicyLink = document.querySelector('.cc-link.cc-policy-link');
+
+        acceptAllButton.addEventListener('click', function() {
+            cookieConsent.allowCookies();
+        });
+
+        rejectButton.addEventListener('click', function() {
+            cookieConsent.denyCookies();
+        });
+
+        editPreferencesButton.addEventListener('click', function() {
+            cookieConsent.openSettings();
+        });
+
+        privacyPolicyLink.href = window.cookieconsent_options.link;
+    });
+</script>
+
+<!-- End Cookie Consent plugin --> 
 
 </body>
 
